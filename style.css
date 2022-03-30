@@ -1,0 +1,616 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+@media screen and (max-width: 2732px){
+    .container{
+        width: 100%;
+        height: 1000px;
+    }
+    .header{
+        width: 100%;
+        padding-top: 65px;
+        text-align: center;
+        height: 40px;
+    }
+    .LOGO{
+        font-size: 36px;
+        color: #7338F6;
+        font-family: 'Jost', sans-serif;
+    }
+    .button_action{
+        text-decoration: none;
+        background: linear-gradient(268.81deg, #55AEEF -3.14%, #7C46F8 99.49%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding: 25px 80px;
+        border: 1px solid;
+        border-image-source: linear-gradient(268.81deg, #55AEEF -3.14%, #7C46F8 99.49%);
+        border-image-slice: 1;
+        font-size: 16px;
+        font-family: 'Jost', sans-serif;    
+    }
+    .content{
+        padding-top: 110px;
+        width: 100%;
+    }
+    .image{
+        /* width: 866px; */
+        width: 500px;
+    }
+    .content_text{
+        margin-top: 263px;
+    }
+    .content_text h3{
+        font-family: 'Jost', sans-serif;
+        /* font-size: 80px; */
+        font-size: 35px;
+        /* line-height: 90px; */
+    }
+    .tag_plus_input{
+        margin-top: 50px;
+    }
+    .tag_plus_input p{
+        color: #A5A3A4;
+        font-family: 'Jost', sans-serif;
+        font-size: 18px;
+        margin-bottom: -3px;
+    }
+    .tag_plus_input input{
+        border: 0;
+    }
+    input::placeholder {
+        font-family: 'Jost', sans-serif;
+        color: rgb(0, 0, 0);
+    }
+    .checked{
+        margin-top: 50px;
+        font-size: 24px;
+    }
+    .check_box{
+        margin-left: 30px;
+    }
+    .checkbox{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip:rect(0 0 0 0);
+        padding-left: 30px;
+    }
+    .check_style{
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        border: 2px solid;
+        border-image-source: linear-gradient(180deg, #7C45F8 0%, #746FFA 79.33%, #6D90FB 100%); 
+        border-image-slice: 1;
+        margin-left: -30px;
+        margin-top: 5px;
+    }
+    .checkbox:checked + .check_style::after{
+        content: "";
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: url(./img/checkbox\ -\ check.png);
+    }
+    .checked a{
+        text-decoration: none;
+        color: #6542F3;
+    }
+    .button_enter{
+        margin-top: 40px;
+    }
+    .button{
+        background: linear-gradient(180deg, #7C45F8 0%, #746FFA 79.33%, #6D90FB 100%);
+        padding: 28px 75px;
+        border-radius: 8px;
+    }
+    .button a{
+        text-decoration: none;
+        color: rgb(87, 87, 87);
+        font-family: 'Jost', sans-serif;
+        font-size: 16px;
+    }
+    #overlay {
+        position: fixed;
+        display: none;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        -webkit-animation: fade .6s;
+        -moz-animation: fade .6s;
+        animation: fade .6s;
+        overflow: auto;
+    }
+    .popup {
+        top: 25%;
+        left: 0;
+        right: 0;       
+        font-size: 14px;
+        margin: auto;
+        width: 85%;
+        min-width: 320px;
+        max-width: 1500px;
+        position: absolute;
+        top: 900px;
+        padding: 15px 20px;
+        background: #fefefe;
+        z-index: 10;
+        border-radius: 16px;
+        font-family: 'Jost', sans-serif;
+        box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    }
+    .popup h2{
+        font-size: 28px;
+    }
+    .popup p{
+        font-size: 24px;
+    }
+    .popup a{
+        color: #6542F3;
+    }
+    .Accept {
+        position: relative;
+        left: 90%;
+        bottom: 50%;
+        border: none;
+        border-radius: 12px;
+        padding: 25px 44px;
+        background: linear-gradient(180deg, #7C45F8 0%, #746FFA 79.33%, #6D90FB 100%);
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        cursor: pointer;
+        outline: none;
+    }
+    .Accept:before {
+        color: rgba(255, 255, 255, 0.9);
+        content: "Accept";
+        font-family: 'Jost', sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        text-decoration: none;
+        text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+        transition: all 0.5s;
+    }
+    .Reject{
+        position: relative;
+        left: 70%;
+        bottom: 50%;
+        border: none;
+        border-radius: 12px;
+        padding: 25px 44px;
+        background: white;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        cursor: pointer;
+        outline: none;
+    }
+    .Reject::before{
+        color: rgba(255, 255, 255, 0.9);
+        content: "Reject";
+        color: black;
+        font-family: 'Jost', sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        text-decoration: none;
+        text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+        transition: all 0.5s;
+    }
+
+}
+
+
+@media screen and (max-width: 1440px){
+    .container{
+        width: 100%;
+        height: 100%;
+        flex-wrap: nowrap;
+    }
+    .header{
+        width: 100%;
+        padding-top: 30px;
+        text-align: center;
+        height: 40px;
+    }
+    .LOGO{
+        font-size: 36px;
+        color: #7338F6;
+        font-family: 'Jost', sans-serif;
+    }
+    .button_action{
+        text-decoration: none;
+        background: linear-gradient(268.81deg, #55AEEF -3.14%, #7C46F8 99.49%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding: 20px 60px;
+        border: 1px solid;
+        border-image-source: linear-gradient(268.81deg, #55AEEF -3.14%, #7C46F8 99.49%);
+        border-image-slice: 1;
+        font-size: 12px;
+        font-family: 'Jost', sans-serif;    
+    }
+    .content{
+        padding-top: 80px;
+        width: 100%;
+    }
+    .image{
+        /* width: 866px; */
+        width: 560px;
+    }
+    .content_text{
+        margin-top: 154px;
+    }
+    .content_text h3{
+        font-family: 'Jost', sans-serif;
+        font-size: 38px;
+        line-height: 56px;
+    }
+    .tag_plus_input{
+        margin-top: 50px;
+    }
+    .tag_plus_input p{
+        color: #A5A3A4;
+        font-family: 'Jost', sans-serif;
+        font-size: 14px;
+        margin-bottom: -3px;
+    }
+    .tag_plus_input input{
+        border: 0;
+    }
+    input::placeholder {
+        font-family: 'Jost', sans-serif;
+        color: rgb(0, 0, 0);
+    }
+    .checked{
+        margin-top: 50px;
+        font-size: 14px;
+    }
+    .check_box{
+        margin-left: 30px;
+    }
+    .checkbox{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip:rect(0 0 0 0);
+        padding-left: 30px;
+    }
+    .check_style{
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        border: 2px solid;
+        border-image-source: linear-gradient(180deg, #7C45F8 0%, #746FFA 79.33%, #6D90FB 100%); 
+        border-image-slice: 1;
+        margin-left: -30px;
+        margin-top: 5px;
+    }
+    .checkbox:checked + .check_style::after{
+        content: "";
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: url(./img/checkbox\ -\ check.png);
+    }
+    .checked a{
+        text-decoration: none;
+        color: #6542F3;
+    }
+    .button_enter{
+        margin-top: 40px;
+    }
+    .button{
+        background: linear-gradient(180deg, #7C45F8 0%, #746FFA 79.33%, #6D90FB 100%);
+        padding: 28px 75px;
+        border-radius: 8px;
+    }
+    .button a{
+        text-decoration: none;
+        color: rgb(87, 87, 87);
+        font-family: 'Jost', sans-serif;
+        font-size: 16px;
+    }
+
+
+    /* popup меню */
+    #overlay {
+        position: fixed;
+        display: none;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        -webkit-animation: fade .6s;
+        -moz-animation: fade .6s;
+        animation: fade .6s;
+        overflow: auto;
+    }
+    .popup {
+        top: 25%;
+        left: 0;
+        right: 0;       
+        font-size: 14px;
+        margin: auto;
+        width: 85%;
+        min-width: 320px;
+        max-width: 1500px;
+        position: absolute;
+        top: 850px;
+        padding: 15px 20px;
+        background: #fefefe;
+        z-index: 10;
+        border-radius: 16px;
+        font-family: 'Jost', sans-serif;
+        box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    }
+    .popup h2{
+        font-size: 18px;
+    }
+    .popup p{
+        font-size: 14px;
+    }
+    .popup a{
+        color: #6542F3;
+    }
+    .Accept {
+        position: absolute;
+        left: 88%;
+        bottom: 10px;
+        border: none;
+        border-radius: 12px;
+        padding: 25px 44px;
+        background: linear-gradient(180deg, #7C45F8 0%, #746FFA 79.33%, #6D90FB 100%);
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        cursor: pointer;
+        outline: none;
+    }
+    .Accept:before {
+        color: rgba(255, 255, 255, 0.9);
+        content: "Accept";
+        font-family: 'Jost', sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        text-decoration: none;
+        text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+        transition: all 0.5s;
+    }
+    .Reject{
+        position: absolute;
+        left: 75%;
+        bottom: 10px;
+        border: none;
+        border-radius: 12px;
+        padding: 25px 44px;
+        background: white;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        cursor: pointer;
+        outline: none;
+    }
+    .Reject::before{
+        color: rgba(255, 255, 255, 0.9);
+        content: "Reject";
+        color: black;
+        font-family: 'Jost', sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        text-decoration: none;
+        text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+        transition: all 0.5s;
+    }
+
+}
+
+
+
+@media screen and (max-width: 375px){
+    .container{
+        width: 375px;
+        height: 500px;
+    }
+    .header{
+        width: 100%;
+        padding-top: 30px;
+        text-align: center;
+    }
+    .LOGO{
+        font-size: 14px;
+        color: #7338F6;
+        font-family: 'Jost', sans-serif;
+    }
+    .button_action{
+        text-decoration: none;
+        background: linear-gradient(268.81deg, #55AEEF -3.14%, #7C46F8 99.49%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding: 15px 40px;
+        border: 1px solid;
+        border-image-source: linear-gradient(268.81deg, #55AEEF -3.14%, #7C46F8 99.49%);
+        border-image-slice: 1;
+        font-size: 12px;
+        font-family: 'Jost', sans-serif;    
+    }
+    .content{
+        padding-top: 30px;
+        width: 100%;
+    }
+    .image{
+        display: none;
+        /* width: 866px; */
+        width: 560px;
+    }
+    .content_text{
+        margin-top: 154px;
+    }
+    .content_text h3{
+        text-align: center;
+        font-family: 'Jost', sans-serif;
+        font-size: 38px;
+        line-height: 56px;
+    }
+    .tag_plus_input{
+        margin-top: 50px;
+    }
+    .tag_plus_input p{
+        color: #A5A3A4;
+        font-family: 'Jost', sans-serif;
+        font-size: 14px;
+        margin-bottom: -3px;
+    }
+    .tag_plus_input input{
+        border: 0;
+    }
+    input::placeholder {
+        font-family: 'Jost', sans-serif;
+        color: rgb(0, 0, 0);
+    }
+    .checked{
+        margin-top: 50px;
+        font-size: 14px;
+    }
+    .check_box{
+        margin-left: 30px;
+    }
+    .checkbox{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip:rect(0 0 0 0);
+        padding-left: 30px;
+    }
+    .check_style{
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        border: 2px solid;
+        border-image-source: linear-gradient(180deg, #7C45F8 0%, #746FFA 79.33%, #6D90FB 100%); 
+        border-image-slice: 1;
+        margin-left: -30px;
+        margin-top: 5px;
+    }
+    .checkbox:checked + .check_style::after{
+        content: "";
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: url(./img/checkbox\ -\ check.png);
+    }
+    .checked a{
+        text-decoration: none;
+        color: #6542F3;
+    }
+    .button_enter{
+        margin-top: 40px;
+    }
+    .button{
+        background: linear-gradient(180deg, #7C45F8 0%, #746FFA 79.33%, #6D90FB 100%);
+        padding: 17px 60px;
+        border-radius: 8px;
+    }
+    .button a{
+        text-decoration: none;
+        color: rgb(87, 87, 87);
+        font-family: 'Jost', sans-serif;
+        font-size: 16px;
+    }
+
+
+    /* popup меню */
+    #overlay {
+        position: fixed;
+        display: none;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        -webkit-animation: fade .6s;
+        -moz-animation: fade .6s;
+        animation: fade .6s;
+        overflow: auto;
+    }
+    .popup {
+        top: 25%;
+        left: 0;
+        right: 0;       
+        font-size: 14px;
+        margin: auto;
+        width: 85%;
+        min-width: 320px;
+        max-width: 1500px;
+        position: absolute;
+        top: 575px;
+        padding: 15px 20px;
+        background: #fefefe;
+        z-index: 10;
+        border-radius: 16px;
+        font-family: 'Jost', sans-serif;
+        box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    }
+    .popup h2{
+        font-size: 16px;
+    }
+    .popup p{
+        font-size: 8px;
+    }
+    .popup a{
+        color: #6542F3;
+    }
+    .Accept {
+        position: absolute;
+        left: 80%;
+        bottom: 5px;
+        border: none;
+        border-radius: 12px;
+        padding: 6px 14px;
+        background: linear-gradient(180deg, #7C45F8 0%, #746FFA 79.33%, #6D90FB 100%);
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        cursor: pointer;
+        outline: none;
+    }
+    .Accept:before {
+        color: rgba(255, 255, 255, 0.9);
+        content: "Accept";
+        font-family: 'Jost', sans-serif;
+        font-size: 8px;
+        font-weight: normal;
+        text-decoration: none;
+        text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+        transition: all 0.5s;
+    }
+    .Reject{
+        position: absolute;
+        left: 62%;
+        bottom: 5px;
+        border: none;
+        border-radius: 12px;
+        padding: 6px 14px;
+        background: white;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        cursor: pointer;
+        outline: none;
+    }
+    .Reject::before{
+        color: rgba(255, 255, 255, 0.9);
+        content: "Reject";
+        color: black;
+        font-family: 'Jost', sans-serif;
+        font-size: 8px;
+        font-weight: normal;
+        text-decoration: none;
+        text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+        transition: all 0.5s;
+    }
+
+}
